@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paletio — Paint Smarter, Mix Faster</title>
+  <meta name="description" content="Paletio helps painters reduce trial & error in color mixing. Extract colors from photos, simulate realistic paint mixes, and manage palettes." />
+  <meta name="author" content="Jose Bagus Ramadhan" />
+  <meta name="theme-color" content="#111318" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Paletio — Paint Smarter, Mix Faster" />
+  <meta property="og:description" content="Extract colors, simulate mixes, and manage palettes. A fast color assistant for painters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dyor-do-your-own-research.github.io/paletio-site" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paletio — Paint Smarter, Mix Faster">
+  <meta name="twitter:description" content="Extract colors, simulate mixes, and manage palettes. A fast color assistant for painters.">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="./PaletioIcon-iOS-Default-1024x1024@1x.png" />
+
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #111318;
+      --text: #e8e9ec;
+      --muted: #a6adbb;
+      --brand: #ff4455;
+      --border: #232632;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji;
+      background: linear-gradient(180deg, #0a0b0e 0%, #0e1016 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.05);
+      object-fit: cover;
+      display: block;
+    }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 16px; }
+    nav a:hover { color: var(--text); }
+    .hero {
+      margin-top: 12px; padding: 32px;
+      background: linear-gradient(160deg, rgba(255, 68, 85, 0.12), rgba(255,255,255,0.02));
+      border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .hero h1 { margin: 8px 0 10px; line-height: 1.2; }
+    .hero p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 22px; }
+    @media (min-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: 0 6px 18px rgba(0,0,0,0.30); }
+    h3 { margin-top: 0; }
+    .btn {
+      display: inline-block; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border);
+      text-decoration: none; color: var(--text); background: #141823;
+    }
+    .btn:hover { border-color: #2e3342; }
+    ul.list { padding-left: 18px; }
+    .muted { color: var(--muted); }
+    footer { margin: 32px 0 16px; color: var(--muted); font-size: 14px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border);
+      border-radius: 999px; background: #0e1117; color: var(--muted); font-size: 13px;
+    }
+    .showcase {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px;
+    }
+    .shot {
+      height: 220px; border-radius: 14px; border: 1px solid var(--border); background:
+      linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 2px, transparent 2px, transparent 8px);
+      display: flex; align-items: center; justify-content: center; color: var(--muted);
+    }
+    .kicker { color: var(--brand); font-weight: 600; letter-spacing: .4px; text-transform: uppercase; font-size: 12px; }
+    .feature {
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px; background: var(--brand); margin-top: 7px;
+    }
+    .cta { display:flex; gap:10px; flex-wrap: wrap; margin-top: 12px; }
+    .badges { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px;}
+    .badge {
+      display:inline-block; padding:2px 8px; border:1px solid var(--border); border-radius:999px; background:#0e1117; color:var(--muted); font-size:12px;
+    }
+  </style>
+
+  <!-- SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Paletio",
+    "operatingSystem": "IOS 18 or later",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "DYOR — Do Your Own Research" },
+    "author": { "@type": "Person", "name": "Jose Bagus Ramadhan" },
+    "url": "https://dyor-do-your-own-research.github.io/paletio-site"
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <main>
+      <section class="hero">
+        <div class="pill" role="note" aria-label="Kicker">
+          <span class="kicker">New</span> v1.0.0 • IOS 18+
+        </div>
+        <h1>Paint smarter. Mix faster.</h1>
+        <p>Paletio helps painters reduce trial &amp; error in color mixing. Extract colors from photos or live camera, simulate realistic mixes, and save palettes for your next painting session.</p>
+        <div class="cta">
+          <a class="btn" href="#" onclick="alert('App Store link coming soon ✨');return false;">Get Paletio on the App Store</a>
+          <a class="btn" href="support.html">Get Support</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Camera Color Picker</span>
+          <span class="badge">Hex Import</span>
+          <span class="badge">Acrylic v1</span>
+          <span class="badge">Offline Core</span>
+        </div>
+      </section>
+
+      <section class="grid" style="margin-top:22px;">
+        <div class="card">
+          <h3>Built for painters</h3>
+          <div class="feature"><div class="dot"></div><p><strong>Extract colors</strong> from photos or live camera with a precise dropper.</p></div>
+          <div class="feature"><div class="dot"></div><p><strong>Simulate mixes</strong> and preview results before wasting paint.</p></div>
+          <div class="feature"><div class="dot"></div><p><strong>Save palettes</strong> and organize by project or style.</p></div>
+          <div class="feature"><div class="dot"></div><p><strong>Import by hex</strong> to match brand or reference values quickly.</p></div>
+        </div>
+
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="list">
+            <li>Open the color picker and sample a hue via photo or camera.</li>
+            <li>Save colors to a palette for your painting session.</li>
+            <li>Open Mix Mode and combine colors to preview the result.</li>
+            <li>Use the suggested ratios as guidance when mixing real paint.</li>
+          </ol>
+          <p class="muted">Results vary by pigment brand and lighting. Compare under neutral lighting for best accuracy.</p>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px;">
+        <h3>Showcase</h3>
+        <div class="showcase">
+          <div class="shot">Screenshot 1</div>
+          <div class="shot">Screenshot 2</div>
+        </div>
+        <p class="muted" style="margin-top:8px;">Replace with real screenshots from your iPhone/iPad for App Store SEO.</p>
+      </section>
+
+      <section class="grid" style="margin-top:16px;">
+        <div class="card">
+          <h3>Who is Paletio for?</h3>
+          <ul class="list">
+            <li>Beginner painters exploring color confidently.</li>
+            <li>Students learning color harmony and composition.</li>
+            <li>Designers converting digital references to real paint.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why you’ll love it</h3>
+          <ul class="list">
+            <li>Reduce wasted paint with accurate previews.</li>
+            <li>Speed up your workflow and plan palettes.</li>
+            <li>Learn color decisions through practice.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px;">
+        <h3>FAQ</h3>
+        <details>
+          <summary>Does Paletio work offline?</summary>
+          <p>Yes. Core features like color sampling, palette management, and local simulations work offline.</p>
+        </details>
+        <details>
+          <summary>Which paints are supported?</summary>
+          <p>v1 targets <strong>acrylic</strong>. Watercolor and oil support are planned next.</p>
+        </details>
+        <details>
+          <summary>Can I import by hex code?</summary>
+          <p>Yes. Enter a hex value to add a color to your palette and mix alongside camera-sampled colors.</p>
+        </details>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+  </div>
+</body>
+</html>

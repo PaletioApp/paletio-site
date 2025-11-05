@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paletio — Support</title>
+  <meta name="description" content="Get help with Paletio: troubleshooting, FAQs, contact, and privacy for the painter’s color-mixing assistant." />
+  <meta name="author" content="Jose Bagus Ramadhan" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Paletio — Support" />
+  <meta property="og:description" content="Help and support for Paletio. FAQs, troubleshooting, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dyor-do-your-own-research.github.io/paletio-site/support" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="./assets/PaletioIcon-iOS-Default-1024x1024@1x.png" />
+
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #111318;
+      --text: #e8e9ec;
+      --muted: #a6adbb;
+      --brand: #ff4455; /* subtle red accent per user's preference in other project */
+      --border: #232632;
+      --success: #38a169;
+      --warning: #dd6b20;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji;
+      background: linear-gradient(180deg, #0a0b0e 0%, #0e1016 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 8px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #fff 0%, #ffd1d5 35%, transparent 36%), conic-gradient(from 0deg, #ffb703, #fb5607, #ff006e, #8338ec, #3a86ff, #06d6a0, #ffb703);
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .brand h1 {
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 16px;
+    }
+    nav a:hover { color: var(--text); }
+    .hero {
+      margin-top: 12px;
+      padding: 24px;
+      background: linear-gradient(160deg, rgba(255, 68, 85, 0.12), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .hero h2 {
+      margin-top: 0;
+      line-height: 1.25;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    section.card, .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+    }
+    h3 {
+      margin-top: 0;
+    }
+    details {
+      background: #0f1218;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 10px 0;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    code, .kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: #0e1117;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      color: #d0d6e0;
+    }
+    .list {
+      padding-left: 18px;
+    }
+    .muted { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #0e1117;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      background: #141823;
+    }
+    .btn:hover { border-color: #2e3342; }
+    footer {
+      margin: 32px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #0e1117;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+
+  <!-- FAQ Schema for better SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I extract a color from a photo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Paletio and tap the camera icon. Choose a photo or use live camera. Tap anywhere on the image to sample a color and save it to your palette."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I mix or compare two paints?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to Mix Mode, select two or more saved colors, then adjust sliders to preview realistic mixes using color theory models."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Paletio work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Core features like color sampling, palette management, and local simulations work offline."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header aria-label="Site header">
+      <a class="brand" href="index.html">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <h1>Paletio Support</h1>
+      </a>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="pill" role="note" aria-label="App info">
+        <span>App</span> <strong>Paletio</strong>
+        <span class="badge">v1.0.0</span>
+        <span class="badge">IOS 18+</span>
+      </div>
+      <h2>How can we help?</h2>
+      <p class="muted">Troubleshooting, FAQs, and contact for the painter’s color‑mixing assistant. Reduce trial &amp; error and paint smarter.</p>
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap: wrap;">
+        <a class="btn" href="https://github.com/DYOR-Do-Your-Own-Research/paletio-site/issues" target="_blank" rel="noopener">Open a Support Ticket</a>
+        <a class="btn" href="privacy.html">Read Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card" aria-labelledby="quick-help">
+        <h3 id="quick-help">Quick Help</h3>
+        <ul class="list">
+          <li><strong>Extract a color from a photo:</strong> Tap the <em>camera</em> on home → pick an image → tap to sample → <em>Save</em>.</li>
+          <li><strong>Mix or compare paints:</strong> Open <em>Mix Mode</em> → pick 2+ colors → adjust sliders to preview the result.</li>
+          <li><strong>Keep multiple droppers active:</strong> In the extractor, long‑press to pin a dropper; repeat to add up to five.</li>
+          <li><strong>Reset palettes:</strong> Settings → <em>Reset Saved Palettes</em>.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="troubleshoot">
+        <h3 id="troubleshoot">Troubleshooting</h3>
+        <details>
+          <summary>Camera or Photos permission denied</summary>
+          <p>Go to <span class="kbd">Settings &gt; Paletio</span> and enable <strong>Camera</strong> and <strong>Photos</strong> access.</p>
+          <p>We only use these to select images or sample colors. No photos leave your device.</p>
+        </details>
+        <details>
+          <summary>Colors look different than real paint</summary>
+          <p>Screen colors are emissive, while paints are reflective. Paletio simulates real‑world mixing, but lighting and pigment brand vary. Compare under neutral lighting and calibrate using a gray card if possible.</p>
+        </details>
+        <details>
+          <summary>App crashed or froze</summary>
+          <p>Force‑quit and reopen Paletio. If it persists, open a ticket and include iOS version, Paletio version, and steps to reproduce.</p>
+        </details>
+      </section>
+
+      <section class="card" aria-labelledby="faq">
+        <h3 id="faq">FAQs</h3>
+        <details>
+          <summary>Does Paletio work offline?</summary>
+          <p>Yes. Core features like color sampling, palette management, and local simulations work offline.</p>
+        </details>
+        <details>
+          <summary>Which paints are supported?</summary>
+          <p>v1 targets <strong>acrylic</strong>. Watercolor and oil support are planned next.</p>
+        </details>
+        <details>
+          <summary>Can I import by hex code?</summary>
+          <p>Yes. Enter a hex value to add a color to your palette and mix alongside camera‑sampled colors.</p>
+        </details>
+        <details>
+          <summary>How accurate is the mixing simulation?</summary>
+          <p>Paletio leverages practical color models to approximate real‑world results. Variations in pigment formulation and lighting can affect outcomes.</p>
+        </details>
+      </section>
+
+      <section class="card" aria-labelledby="contact">
+        <h3 id="contact">Contact & Support</h3>
+        <p><strong>Best way:</strong> open a GitHub issue so we can track and respond publicly:</p>
+        <p><a class="btn" href="https://github.com/DYOR-Do-Your-Own-Research/paletio-site/issues" target="_blank" rel="noopener">Create Issue</a></p>
+        <p>Or email us: <a href="mailto:josebagus4@gmail.com">josebagus4@gmail.com</a> <!-- change to your preferred support inbox if needed --></p>
+        <p class="muted">Include: iOS version, Paletio version, device model, and steps to reproduce the problem.</p>
+      </section>
+
+      <section class="card" aria-labelledby="privacy">
+        <h3 id="privacy">Data & Privacy (Summary)</h3>
+        <ul class="list">
+          <li>No account required; no personal data collected.</li>
+          <li>Camera/Photos access is used on‑device to sample colors at your request.</li>
+          <li>Analytics (if enabled) are anonymous and help improve stability and UX.</li>
+        </ul>
+        <p>Full details: <a href="privacy.html">Read the Privacy Policy</a>.</p>
+      </section>
+
+      <section class="card" aria-labelledby="accessibility">
+        <h3 id="accessibility">Accessibility</h3>
+        <ul class="list">
+          <li>Large tappable targets and clear contrast.</li>
+          <li>VoiceOver labels for key controls (camera, save, mix sliders).</li>
+          <li>Color names and hex values are displayed alongside swatches.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="legal">
+        <h3 id="legal">Legal</h3>
+        <p>© 2025 Jose Bagus Ramadhan. All rights reserved.</p>
+        <p>Paletio is developed under the organization <em>DYOR — Do Your Own Research</em>.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ for painters. <a href="index.html">Back to Home</a> • <a href="support.html">Support</a> • <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
+</body>
+</html>
